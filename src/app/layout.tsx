@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Account from "@/components/layout/account";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +26,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-darkMainColor via-secondaryColor to-mainColor`}
       >
-        {children}
+        <div className="container mx-auto">
+          <div className="flex items-center gap-5 min-h-screen md:flex-nowrap flex-wrap">
+            <Account />
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
