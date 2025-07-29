@@ -9,9 +9,9 @@ const Account = () => {
     <div className="flex items-center flex-col gap-5 md:w-auto w-full">
       <div className="bg-gradient-to-br from-darkMainColor to-secondaryColor p-4 rounded-full overflow-hidden">
         <Image
-          src={"/reem.jpeg"}
-          width={200}
-          height={100}
+          src={"/reem.jpg"}
+          width={90}
+          height={200}
           alt="image"
           className="rounded-full"
         />
