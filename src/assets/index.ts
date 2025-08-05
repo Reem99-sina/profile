@@ -11,10 +11,13 @@ import img10 from "../assets/babyshop.png";
 import img11 from "../assets/coffeeshop.jpg";
 import uber from "../assets/uberApp.jpg";
 import tiktok from "../assets/tiktok.jpg"
-
+import CodeKids from "../assets/code-kids.PNG";
+import HealthCare from "../assets/health-care.PNG";
 
 
 export{
+    HealthCare,
+    CodeKids,
     img1 ,
     img2,
     img3,
