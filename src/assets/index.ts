@@ -13,6 +13,7 @@ import uber from "../assets/uberApp.jpg";
 import tiktok from "../assets/tiktok.jpg"
 import CodeKids from "../assets/code-kids.PNG";
 import HealthCare from "../assets/health-care.PNG";
+import Ecommerce from "../assets/ecommerce.jpg";
 
 
 export{
@@ -29,5 +30,5 @@ export{
     img11,
     uber,
     tiktok,
-    img7,img8
+    img7,img8,Ecommerce
 }
