@@ -4,7 +4,6 @@ import {
   img1,
   img3,
   img4,
-  img5,
   img9,
   img10,
   img11,
@@ -64,15 +63,15 @@ const frontProject = [
   {
     title: "health care website",
     image: HealthCare,
-    githubLink: "https://github.com/Reem99-sina/code-kids",
+    githubLink: "https://github.com/Reem99-sina/healthcare-plateform",
   },
 
-  {
-    title: "amazon react project",
-    image: img5,
-    githubLink: "https://github.com/Reem99-sina/amazonheroku",
-    liveDome: "https://reem99-sina.github.io/productlist/",
-  },
+  // {
+  //   title: "amazon react project",
+  //   image: img5,
+  //   githubLink: "https://github.com/Reem99-sina/amazonheroku",
+  //   liveDome: "https://reem99-sina.github.io/productlist/",
+  // },
   {
     title: "messager project with next js",
     image: img9,
