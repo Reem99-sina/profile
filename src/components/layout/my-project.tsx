@@ -12,6 +12,7 @@ import {
   CodeKids,
   HealthCare,
   Ecommerce,
+  Chat,
 } from "@/assets";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
@@ -38,6 +39,11 @@ const backendProjects = [
     title: "E-Commerce API",
     image: Ecommerce,
     githubLink: "https://github.com/Reem99-sina/ecommerce-api",
+  },
+  {
+    title: "Real chat API",
+    image: Chat,
+    githubLink: "https://github.com/Reem99-sina/real-chat-api",
   },
   {
     title: "food type from api ",

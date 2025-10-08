@@ -14,6 +14,7 @@ import tiktok from "../assets/tiktok.jpg"
 import CodeKids from "../assets/code-kids.PNG";
 import HealthCare from "../assets/health-care.PNG";
 import Ecommerce from "../assets/ecommerce.jpg";
+import Chat from "../assets/chat.png";
 
 
 export{
@@ -30,5 +31,5 @@ export{
     img11,
     uber,
     tiktok,
-    img7,img8,Ecommerce
+    img7,img8,Ecommerce,Chat
 }

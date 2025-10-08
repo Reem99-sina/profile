@@ -30,9 +30,9 @@ export function HomeComponent() {
         <h3 className="font-black text-mainYellow uppercase text-3xl">
           I'm Reem Ebrahim.
         </h3>
-        <h3 className="font-black  uppercase text-3xl">Front-end Developer</h3>
+        <h3 className="font-black  uppercase text-3xl">Software Engineering</h3>
         <p className=" text-white">
-          I'm a passionate front-end developer with 2 years of experience
+          I'm a passionate Software Engineering with 2 years of experience
           creating responsive and user-friendly web applications. I specialize
           in Reactjs,Nextjs and love working with modern JavaScript frameworks
           and libraries.
