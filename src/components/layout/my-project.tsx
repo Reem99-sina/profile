@@ -13,6 +13,7 @@ import {
   HealthCare,
   Ecommerce,
   Chat,
+  TaskManagement
 } from "@/assets";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
@@ -44,6 +45,11 @@ const backendProjects = [
     title: "Real chat API",
     image: Chat,
     githubLink: "https://github.com/Reem99-sina/real-chat-api",
+  },
+  {
+    title: "Task Management API",
+    image: TaskManagement,
+    githubLink: "https://github.com/Reem99-sina/taskFlow",
   },
   {
     title: "food type from api ",
