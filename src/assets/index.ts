@@ -16,6 +16,7 @@ import HealthCare from "../assets/health-care.PNG";
 import Ecommerce from "../assets/ecommerce.jpg";
 import Chat from "../assets/chat.png";
 import TaskManagement from "../assets/task_management.png";
+import BlogPost from "../assets/blog-post.jpg";
 
 
 export{
@@ -32,5 +33,5 @@ export{
     img11,
     uber,
     tiktok,
-    img7,img8,Ecommerce,Chat,TaskManagement
+    img7,img8,Ecommerce,Chat,TaskManagement,BlogPost
 }

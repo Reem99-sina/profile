@@ -13,7 +13,8 @@ import {
   HealthCare,
   Ecommerce,
   Chat,
-  TaskManagement
+  TaskManagement,
+  BlogPost
 } from "@/assets";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
@@ -50,6 +51,11 @@ const backendProjects = [
     title: "Task Management API",
     image: TaskManagement,
     githubLink: "https://github.com/Reem99-sina/taskFlow",
+  },
+  {
+    title: "Blog  API",
+    image: BlogPost,
+    githubLink: "https://github.com/Reem99-sina/blog",
   },
   {
     title: "food type from api ",
