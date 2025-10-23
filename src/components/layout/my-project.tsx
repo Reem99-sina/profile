@@ -14,7 +14,8 @@ import {
   Ecommerce,
   Chat,
   TaskManagement,
-  BlogPost
+  BlogPost,
+  MacBook
 } from "@/assets";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
@@ -72,6 +73,12 @@ const backendProjects = [
 ];
 
 const frontProject = [
+  {
+    title: "mac-book 3d website",
+    image: MacBook,
+    githubLink: "https://github.com/Reem99-sina/-mac-book",
+    liveDome: "https://mac-book-six.vercel.app/",
+  },
   {
     title: "code kids website",
     image: CodeKids,

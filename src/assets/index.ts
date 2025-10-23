@@ -10,28 +10,35 @@ import img9 from "../assets/messenger.jpg";
 import img10 from "../assets/babyshop.png";
 import img11 from "../assets/coffeeshop.jpg";
 import uber from "../assets/uberApp.jpg";
-import tiktok from "../assets/tiktok.jpg"
+import tiktok from "../assets/tiktok.jpg";
 import CodeKids from "../assets/code-kids.PNG";
 import HealthCare from "../assets/health-care.PNG";
 import Ecommerce from "../assets/ecommerce.jpg";
 import Chat from "../assets/chat.png";
 import TaskManagement from "../assets/task_management.png";
 import BlogPost from "../assets/blog-post.jpg";
+import MacBook from "../assets/mac-book.jpeg";
 
 
-export{
-    HealthCare,
-    CodeKids,
-    img1 ,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6,
-    img9,
-    img10,
-    img11,
-    uber,
-    tiktok,
-    img7,img8,Ecommerce,Chat,TaskManagement,BlogPost
-}
+export {
+  HealthCare,
+  CodeKids,
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img9,
+  img10,
+  img11,
+  uber,
+  tiktok,
+  img7,
+  img8,
+  Ecommerce,
+  Chat,
+  TaskManagement,
+  BlogPost,
+  MacBook
+};
