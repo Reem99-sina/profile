@@ -15,7 +15,8 @@ import {
   Chat,
   TaskManagement,
   BlogPost,
-  MacBook
+  MacBook,
+  EcommerceVue
 } from "@/assets";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
@@ -69,10 +70,21 @@ const backendProjects = [
     image: img3,
     githubLink: "https://github.com/Reem99-sina/exam.git",
   },
+  {
+    title: "exam backend project ",
+    image: img3,
+    githubLink: "https://github.com/Reem99-sina/exam.git",
+  },
   
 ];
 
 const frontProject = [
+   {
+    title: "E-commerce website",
+    image: EcommerceVue,
+    githubLink: "https://github.com/Reem99-sina/ecommerce-vue",
+    liveDome: "https://ecommerce-vue-dusky.vercel.app/",
+  },
   {
     title: "mac-book 3d website",
     image: MacBook,

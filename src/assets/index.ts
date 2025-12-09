@@ -18,9 +18,11 @@ import Chat from "../assets/chat.png";
 import TaskManagement from "../assets/task_management.png";
 import BlogPost from "../assets/blog-post.jpg";
 import MacBook from "../assets/mac-book.jpeg";
+import EcommerceVue from "../assets/e-commerce-vue.png";
 
 
-export {
+
+export {EcommerceVue,
   HealthCare,
   CodeKids,
   img1,

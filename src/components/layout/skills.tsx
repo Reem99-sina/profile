@@ -6,6 +6,7 @@ export function Skills() {
       title: "Frontend",
       skills: [
         { name: "React/Next.js", level: 90 },
+        { name: "vue.js", level: 70 },
         { name: "TypeScript", level: 85 },
         { name: "Tailwind CSS", level: 95 },
         { name: "Material UI", level: 95 },
