@@ -70,11 +70,7 @@ const backendProjects = [
     image: img3,
     githubLink: "https://github.com/Reem99-sina/exam.git",
   },
-  {
-    title: "exam backend project ",
-    image: img3,
-    githubLink: "https://github.com/Reem99-sina/exam.git",
-  },
+  
   
 ];
 
