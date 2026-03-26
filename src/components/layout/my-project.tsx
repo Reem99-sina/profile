@@ -16,7 +16,7 @@ import {
   TaskManagement,
   BlogPost,
   MacBook,
-  EcommerceVue
+  EcommerceVue,
 } from "@/assets";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
@@ -39,6 +39,11 @@ const Project = ({
   );
 };
 const backendProjects = [
+  {
+    title: "tiktok with express",
+    image: tiktok,
+    githubLink: "https://github.com/Reem99-sina/tiktok_back",
+  },
   {
     title: "E-Commerce API",
     image: Ecommerce,
@@ -70,12 +75,10 @@ const backendProjects = [
     image: img3,
     githubLink: "https://github.com/Reem99-sina/exam.git",
   },
-  
-  
 ];
 
 const frontProject = [
-   {
+  {
     title: "E-commerce website",
     image: EcommerceVue,
     githubLink: "https://github.com/Reem99-sina/ecommerce-vue",
@@ -179,7 +182,7 @@ const MyProject = () => {
               </Project>
             ))}
           </div>
-            <div className="relative w-auto">
+          <div className="relative w-auto">
             <div className="text-white font-bold text-2xl">Backend</div>
             <span className="absolute -bottom-2 left-0 w-16 h-1 bg-mainYellow"></span>
           </div>
