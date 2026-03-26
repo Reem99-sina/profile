@@ -134,7 +134,7 @@ const frontProject = [
     githubLink: "https://github.com/Reem99-sina/uberFront.git",
   },
   {
-    title: "tiktok with react native and supabase",
+    title: "tiktok with react native",
     image: tiktok,
     githubLink: "https://github.com/Reem99-sina/tiktok",
   },
