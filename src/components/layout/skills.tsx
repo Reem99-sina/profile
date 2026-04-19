@@ -1,54 +1,23 @@
+import { useEffect, useState } from "react";
 import { Progress } from "../ui/progress";
+import { category } from "@/lib/data/skill";
 
 export function Skills() {
-  const skillCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React/Next.js", level: 90 },
-        { name: "vue.js", level: 70 },
-        { name: "TypeScript", level: 85 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Material UI", level: 95 },
-        { name: "React Native", level: 75 },
-      ],
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "MongoDB", level: 70 },
-      ],
-    },
-    {
-      title: "Tools & Others",
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "Figma", level: 85 },
-      ],
-    },
-  ];
-  const technologies = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "React Native",
-    "Next.js",
-    "Node.js",
-    "Python",
-    "MongoDB",
-    "Tailwind CSS",
-    "shadcn/ui ",
-    "Git",
-    "Docker",
-    "AWS",
-    "Figma",
-    "Firebase",
-    "Vercel",
-  ];
+  const [categories, setCategories] = useState([]);
+  const [technologies, setTechnologies] = useState([]);
 
+  useEffect(() => {
+    const fetchSkills = async () => {
+      const res = await fetch("/api/skills");
+      const data = await res.json();
+
+      setCategories(data.categories);
+      setTechnologies(data.technologies);
+    };
+
+    fetchSkills();
+  }, []);
+  
   return (
     <section id="skills" className="py-20  text-foreground">
       <div className="container mx-auto px-6">
@@ -64,7 +33,7 @@ export function Skills() {
           </div>
           {/* Skill Bars */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {skillCategories.map((category, index) => (
+            {categories.map((category: category, index) => (
               <div
                 key={index}
                 className="shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.01] border-border hover:border-mainYellow bg-background"

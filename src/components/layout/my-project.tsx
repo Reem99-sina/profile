@@ -1,26 +1,9 @@
-import React, { ReactNode } from "react";
-
-import {
-  img1,
-  img3,
-  img4,
-  img9,
-  img10,
-  img11,
-  uber,
-  tiktok,
-  CodeKids,
-  HealthCare,
-  Ecommerce,
-  Chat,
-  TaskManagement,
-  BlogPost,
-  MacBook,
-  EcommerceVue,
-} from "@/assets";
+import React, { ReactNode, useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
 import { Button } from "@/components/ui/button";
 import "./my-project.css";
+import { backendProject } from "@/lib/data/backendProject";
+import { frontendProject } from "@/lib/data/frontendProject";
 
 const Project = ({
   url,
@@ -38,112 +21,23 @@ const Project = ({
     </article>
   );
 };
-const backendProjects = [
-  {
-    title: "tiktok with express",
-    image: tiktok,
-    githubLink: "https://github.com/Reem99-sina/tiktok_back",
-  },
-  {
-    title: "E-Commerce API",
-    image: Ecommerce,
-    githubLink: "https://github.com/Reem99-sina/ecommerce-api",
-  },
-  {
-    title: "Real chat API",
-    image: Chat,
-    githubLink: "https://github.com/Reem99-sina/real-chat-api",
-  },
-  {
-    title: "Task Management API",
-    image: TaskManagement,
-    githubLink: "https://github.com/Reem99-sina/taskFlow",
-  },
-  {
-    title: "Blog  API",
-    image: BlogPost,
-    githubLink: "https://github.com/Reem99-sina/blog",
-  },
-  {
-    title: "food type from api ",
-    image: img1,
-    githubLink: "https://github.com/Reem99-sina/food.git",
-  },
 
-  {
-    title: "exam backend project ",
-    image: img3,
-    githubLink: "https://github.com/Reem99-sina/exam.git",
-  },
-];
-
-const frontProject = [
-  {
-    title: "E-commerce website",
-    image: EcommerceVue,
-    githubLink: "https://github.com/Reem99-sina/ecommerce-vue",
-    liveDome: "https://ecommerce-vue-dusky.vercel.app/",
-  },
-  {
-    title: "mac-book 3d website",
-    image: MacBook,
-    githubLink: "https://github.com/Reem99-sina/-mac-book",
-    liveDome: "https://mac-book-six.vercel.app/",
-  },
-  {
-    title: "code kids website",
-    image: CodeKids,
-    githubLink: "https://github.com/Reem99-sina/code-kids",
-    liveDome: "https://code-kids-five.vercel.app/",
-  },
-  {
-    title: "health care website",
-    image: HealthCare,
-    githubLink: "https://github.com/Reem99-sina/healthcare-plateform",
-  },
-
-  // {
-  //   title: "amazon react project",
-  //   image: img5,
-  //   githubLink: "https://github.com/Reem99-sina/amazonheroku",
-  //   liveDome: "https://reem99-sina.github.io/productlist/",
-  // },
-  {
-    title: "messager project with next js",
-    image: img9,
-    githubLink: "https://github.com/Reem99-sina/messager",
-    liveDome: "https://messager-woad.vercel.app/",
-  },
-  {
-    title: "baby shop with next js",
-    image: img10,
-    githubLink: "https://github.com/Reem99-sina/baby-shop",
-    liveDome: "https://baby-shop-ten.vercel.app/",
-  },
-  {
-    title: "coffee shop with react native",
-    image: img11,
-    githubLink: "https://github.com/Reem99-sina/coffeeshop",
-  },
-  {
-    title: "movies search example ",
-    image: img4,
-    githubLink: "https://github.com/Reem99-sina/movies",
-    liveDome: "https://movies-ten-ivory.vercel.app/",
-  },
-  {
-    title: "Uber with react native and node js",
-    image: uber,
-    githubLink: "https://github.com/Reem99-sina/uberFront.git",
-  },
-  {
-    title: "tiktok with react native",
-    image: tiktok,
-    githubLink: "https://github.com/Reem99-sina/tiktok",
-  },
-];
 
 const MyProject = () => {
+  const [frontend, setFrontend] = useState([]);
+  const [backend, setBackend] = useState([]);
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const res = await fetch("/api/projects");
+      const data = await res.json();
+
+      setFrontend(data.frontend);
+      setBackend(data.backend);
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <section
       id="project"
@@ -162,8 +56,8 @@ const MyProject = () => {
             <span className="absolute -bottom-2 left-0 w-16 h-1 bg-mainYellow"></span>
           </div>
           <div className="protifolio__container text-white">
-            {frontProject.map((ele, index) => (
-              <Project url={ele.image} key={ele.title + index}>
+            {frontend?.map((ele:frontendProject, index) => (
+              <Project url={ele.image} key={ele.title+index}>
                 <h3 className="capitalize mb-2">{ele.title}</h3>
                 <div className="protifolio__item-cta">
                   <Button className="bg-transparent border border-white rounded px-2 py-3">
@@ -187,7 +81,7 @@ const MyProject = () => {
             <span className="absolute -bottom-2 left-0 w-16 h-1 bg-mainYellow"></span>
           </div>
           <div className="protifolio__container text-white">
-            {backendProjects.map((ele, index) => (
+            {backend?.map((ele: backendProject, index) => (
               <Project url={ele.image} key={ele.title + index}>
                 <h3 className="capitalize mb-2">{ele.title}</h3>
                 <div className="protifolio__item-cta">
