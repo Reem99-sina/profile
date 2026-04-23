@@ -10,6 +10,7 @@ import {
   HealthCare,
   MacBook,
   EcommerceVue,
+  Stock
 } from "@/assets";
 
 export type frontendProject={
@@ -20,6 +21,12 @@ export type frontendProject={
 }
 
 export const frontProjects = [
+  {
+    title: "Stock Markets dashboard",
+    image: Stock,
+    githubLink: "https://github.com/Reem99-sina/stocks_market",
+    liveDome: "https://stocks-market-ec9k.vercel.app/",
+  },
    {
     title: "E-commerce website",
     image: EcommerceVue,

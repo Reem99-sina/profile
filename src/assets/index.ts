@@ -19,10 +19,11 @@ import TaskManagement from "../assets/task_management.png";
 import BlogPost from "../assets/blog-post.jpg";
 import MacBook from "../assets/mac-book.jpeg";
 import EcommerceVue from "../assets/e-commerce-vue.png";
+import Stock from "../assets/stock.png";
 
-
-
-export {EcommerceVue,
+export {
+  Stock,
+  EcommerceVue,
   HealthCare,
   CodeKids,
   img1,
@@ -42,5 +43,5 @@ export {EcommerceVue,
   Chat,
   TaskManagement,
   BlogPost,
-  MacBook
+  MacBook,
 };
