@@ -20,8 +20,11 @@ import BlogPost from "../assets/blog-post.jpg";
 import MacBook from "../assets/mac-book.jpeg";
 import EcommerceVue from "../assets/e-commerce-vue.png";
 import Stock from "../assets/stock.png";
+import SkillSwap from "../assets/skillswap.jpeg";
+
 
 export {
+  SkillSwap,
   Stock,
   EcommerceVue,
   HealthCare,

@@ -10,7 +10,8 @@ import {
   HealthCare,
   MacBook,
   EcommerceVue,
-  Stock
+  Stock,
+  SkillSwap
 } from "@/assets";
 
 export type frontendProject={
@@ -21,6 +22,12 @@ export type frontendProject={
 }
 
 export const frontProjects = [
+   {
+    title: "Skillswap",
+    image: SkillSwap,
+    githubLink: "https://github.com/Reem99-sina/skillswap_mobile.git",
+    
+  },
   {
     title: "Stock Markets dashboard",
     image: Stock,
