@@ -68,7 +68,7 @@ export const frontProjects = [
     title: "messager project with next js",
     image: img9,
     githubLink: "https://github.com/Reem99-sina/messager",
-    liveDome: "https://messager-woad.vercel.app/",
+    liveDome: "https://messag-chat.netlify.app/",
   },
   {
     title: "baby shop with next js",

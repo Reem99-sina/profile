@@ -139,7 +139,7 @@ export function ContactUs() {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="bg-input text-foreground border-border focus:border-mainYellow focus:ring-mainYellow"
+                      className="bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
                     />
                   </div>
                   <div>
@@ -155,7 +155,7 @@ export function ContactUs() {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="bg-input text-foreground border-border focus:border-mainYellow focus:ring-mainYellow"
+                      className="bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
                     />
                   </div>
                 </div>
@@ -171,7 +171,7 @@ export function ContactUs() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    className="bg-input text-foreground border-border focus:border-mainYellow focus:ring-mainYellow"
+                    className="bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
                   />
                 </div>
                 <div>
@@ -187,7 +187,7 @@ export function ContactUs() {
                     rows={5}
                     required
                     disabled={isSubmitting}
-                    className="min-h-[100px] bg-input text-foreground border-border focus:border-mainYellow focus:ring-mainYellow"
+                    className="min-h-[100px] bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
                   />
                 </div>
                 <Button
