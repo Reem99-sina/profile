@@ -1,4 +1,3 @@
-
 import {
   img4,
   img9,
@@ -12,22 +11,27 @@ import {
   EcommerceVue,
   Stock,
   SkillSwap,
-  ReviewerCv
+  ReviewerCv,
 } from "@/assets";
 
-export type frontendProject={
-    title:string,
-    image:string,
-    githubLink:string,
-    liveDome:string
-}
+export type frontendProject = {
+  title: string;
+  image: string;
+  githubLink: string;
+  liveDome: string;
+};
 
 export const frontProjects = [
-   {
+  {
+    title: "Review CV  AI project",
+    image: ReviewerCv,
+    githubLink: "https://github.com/Reem99-sina/Review_cv",
+    liveDome: "https://review-cv-peach.vercel.app/",
+  },
+  {
     title: "Skillswap",
     image: SkillSwap,
     githubLink: "https://github.com/Reem99-sina/skillswap_mobile.git",
-    
   },
   {
     title: "Stock Markets dashboard",
@@ -35,7 +39,7 @@ export const frontProjects = [
     githubLink: "https://github.com/Reem99-sina/stocks_market",
     liveDome: "https://stocks-market-ec9k.vercel.app/",
   },
-   {
+  {
     title: "E-commerce website",
     image: EcommerceVue,
     githubLink: "https://github.com/Reem99-sina/ecommerce-vue",
@@ -59,12 +63,6 @@ export const frontProjects = [
     githubLink: "https://github.com/Reem99-sina/healthcare-plateform",
   },
 
-  {
-    title: "Review CV project",
-    image: ReviewerCv,
-    githubLink: "https://github.com/Reem99-sina/Review_cv",
-    liveDome: "https://review-cv-peach.vercel.app/",
-  },
   {
     title: "messager project with next js",
     image: img9,
