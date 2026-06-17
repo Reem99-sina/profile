@@ -11,7 +11,8 @@ import {
   MacBook,
   EcommerceVue,
   Stock,
-  SkillSwap
+  SkillSwap,
+  ReviewerCv
 } from "@/assets";
 
 export type frontendProject={
@@ -58,12 +59,12 @@ export const frontProjects = [
     githubLink: "https://github.com/Reem99-sina/healthcare-plateform",
   },
 
-  // {
-  //   title: "amazon react project",
-  //   image: img5,
-  //   githubLink: "https://github.com/Reem99-sina/amazonheroku",
-  //   liveDome: "https://reem99-sina.github.io/productlist/",
-  // },
+  {
+    title: "Review CV project",
+    image: ReviewerCv,
+    githubLink: "https://github.com/Reem99-sina/Review_cv",
+    liveDome: "https://review-cv-peach.vercel.app/",
+  },
   {
     title: "messager project with next js",
     image: img9,

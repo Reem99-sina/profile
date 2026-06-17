@@ -22,7 +22,6 @@ const Project = ({
   );
 };
 
-
 const MyProject = () => {
   const [frontend, setFrontend] = useState([]);
   const [backend, setBackend] = useState([]);
@@ -56,8 +55,8 @@ const MyProject = () => {
             <span className="absolute -bottom-2 left-0 w-16 h-1 bg-mainYellow"></span>
           </div>
           <div className="protifolio__container text-white">
-            {frontend?.map((ele:frontendProject, index) => (
-              <Project url={ele.image} key={ele.title+index}>
+            {frontend?.map((ele: frontendProject, index) => (
+              <Project url={ele.image} key={ele.title + index}>
                 <h3 className="capitalize mb-2">{ele.title}</h3>
                 <div className="protifolio__item-cta">
                   <Button className="bg-transparent border border-white rounded px-2 py-3">

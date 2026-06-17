@@ -47,7 +47,7 @@ export default function Home() {
             <div
               className={clsx(
                 tabActive == link.href ? "bg-mainYellow" : "bg-[#2b2a2a]",
-                " p-5 my-5 rounded-full hover:bg-mainYellow flex flex-row-reverse items-center gap-2"
+                " p-5 my-5 rounded-full hover:bg-mainYellow flex flex-row-reverse items-center gap-2",
               )}
               onClick={() => setTabActive(link.href)}
             >
