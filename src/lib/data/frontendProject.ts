@@ -23,6 +23,12 @@ export type frontendProject = {
 
 export const frontProjects = [
   {
+    title: "admin Review CV dashboard",
+    image: ReviewerCv,
+    githubLink: "https://github.com/Reem99-sina/Review_cv_admin",
+    liveDome: "https://review-cv-admin.vercel.app/",
+  },
+  {
     title: "Review CV  AI project",
     image: ReviewerCv,
     githubLink: "https://github.com/Reem99-sina/Review_cv",
