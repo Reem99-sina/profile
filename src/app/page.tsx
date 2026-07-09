@@ -58,26 +58,6 @@ export default function Home() {
             </div>
           </div>
         ))}
-
-        {/* <div className="group bg-[#2b2a2a] p-5 my-5 rounded-full hover:bg-mainYellow flex flex-row-reverse items-center gap-2">
-                  <FaRegUser />
-                  <span className="hidden group-hover:block transition-opacity duration-300">
-                    About
-                  </span>
-                </div>
-
-                <div className="group bg-[#2b2a2a] p-5 my-5 rounded-full hover:bg-mainYellow flex flex-row-reverse items-center gap-2">
-                  <IoBag />
-                  <span className="hidden group-hover:block transition-opacity duration-300">
-                    Projects
-                  </span>
-                </div>
-                <div className="group bg-[#2b2a2a] p-5 my-5 rounded-full hover:bg-mainYellow flex flex-row-reverse items-center gap-2">
-                  <MdContactPhone />
-                  <span className="hidden group-hover:block transition-opacity duration-300">
-                    Contact
-                  </span>
-                </div> */}
       </div>
     </div>
   );

@@ -6,7 +6,9 @@ import {
   Ecommerce,
   Chat,
   TaskManagement,
-  BlogPost
+  BlogPost,
+  ReviewerCv,
+  EstateHub
 } from "@/assets";
 
 export type backendProject={
@@ -16,6 +18,12 @@ export type backendProject={
 }
 
 export const backendProjects = [
+   {
+    title: "EstateHub_api",
+    image: EstateHub,
+    githubLink: "https://github.com/Reem99-sina/estatehub-api",
+    liveDome: "https://estatehub-api.vercel.app/",
+  },
  {
     title: "tiktok with express",
     image: tiktok,

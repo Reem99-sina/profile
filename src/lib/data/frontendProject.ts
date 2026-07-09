@@ -12,6 +12,7 @@ import {
   Stock,
   SkillSwap,
   ReviewerCv,
+  EstateHub,
 } from "@/assets";
 
 export type frontendProject = {
@@ -22,6 +23,12 @@ export type frontendProject = {
 };
 
 export const frontProjects = [
+  {
+    title: "EstateHub",
+    image: EstateHub,
+    githubLink: "https://github.com/Reem99-sina/estatehub",
+    liveDome: "https://estatehub-indol.vercel.app/",
+  },
   {
     title: "admin Review CV dashboard",
     image: ReviewerCv,

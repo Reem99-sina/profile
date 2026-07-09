@@ -22,10 +22,13 @@ import EcommerceVue from "../assets/e-commerce-vue.png";
 import Stock from "../assets/stock.png";
 import SkillSwap from "../assets/skillswap.jpeg";
 import ReviewerCv from "../assets/people-are-reviewing.jpg";
+import EstateHub from "../assets/estateHub.png";
+
 
 
 
 export {
+  EstateHub,
   ReviewerCv,
   SkillSwap,
   Stock,
