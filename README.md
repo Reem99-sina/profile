@@ -1,36 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Profile Portfolio
 
-## Getting Started
+A modern and responsive personal portfolio website built with **Next.js 15**, **React 19**, **TypeScript**, and **Tailwind CSS**. The website showcases professional information, skills, projects, and contact details in a clean and interactive user interface.
 
-First, run the development server:
+## 🚀 Live Demo
+
+https://profile-wine-nu.vercel.app/
+
+---
+
+## ✨ Features
+
+* Responsive design for desktop, tablet, and mobile devices
+* Modern UI built with Tailwind CSS
+* Interactive components powered by Radix UI
+* Skills and experience showcase
+* Projects section
+* Progress indicators and tabs
+* Fast performance with Next.js
+* Type-safe development using TypeScript
+* Optimized for SEO and accessibility
+
+---
+
+## 🛠 Tech Stack
+
+### Framework
+
+* Next.js 15
+
+### Frontend
+
+* React 19
+* TypeScript
+
+### Styling
+
+* Tailwind CSS
+* tailwindcss-animate
+* tailwind-merge
+* class-variance-authority
+
+### UI Components
+
+* Radix UI
+
+  * Tabs
+  * Label
+  * Progress
+  * Slot
+
+### Icons
+
+* Lucide React
+* React Icons
+
+### Code Quality
+
+* ESLint
+* Prettier
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone [https://github.com/your-username/profile.git](https://github.com/Reem99-sina/profile)
+```
+
+Navigate to the project directory:
+
+```bash
+cd profile
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔨 Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Starts the development server.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+Creates an optimized production build.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Runs the production server.
+
+```bash
+npm run lint
+```
+
+Runs ESLint checks.
+
+---
+
+## 📁 Project Structure
+
+```text
+profile/
+├── public/
+├── src/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── styles/
+│   └── utils/
+├── package.json
+├── tailwind.config.ts
+├── next.config.ts
+└── tsconfig.json
+```
+
+---
+
+## 🎯 Goals
+
+This project was created to:
+
+* Present personal and professional information.
+* Showcase technical skills and projects.
+* Demonstrate modern frontend development practices.
+* Provide a fast and responsive user experience.
+
+---
+
+## 🌐 Deployment
+
+The project is deployed on Vercel:
+
+https://profile-wine-nu.vercel.app/
+
+---
+
+## 📄 License
+
+This project is available for personal and educational use.
