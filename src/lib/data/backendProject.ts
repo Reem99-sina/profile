@@ -7,7 +7,6 @@ import {
   Chat,
   TaskManagement,
   BlogPost,
-  ReviewerCv,
   EstateHub
 } from "@/assets";
 
