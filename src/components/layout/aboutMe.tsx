@@ -1,5 +1,5 @@
 import { Skills } from "./skills";
-import { Experience } from "./experiences";
+import { ExperienceSection } from "./experiences";
 import CTA from "./CTA";
 
 export function AboutMe() {
@@ -81,7 +81,7 @@ export function AboutMe() {
         </div>
       </div>
       <Skills />
-      <Experience />
+      <ExperienceSection />
     </section>
   );
 }
