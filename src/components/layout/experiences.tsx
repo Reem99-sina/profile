@@ -1,7 +1,6 @@
 
 import {
   BriefcaseBusiness,
-  GraduationCap,
   MapPin,
   CalendarDays,
 } from "lucide-react";
