@@ -6,7 +6,7 @@ export function AboutMe() {
   const personalInfos = [
     { label: "First Name", value: "Reem" },
     { label: "Last Name", value: "Ebrahim" },
-    { label: "Age", value: "26 Years" },
+    { label: "Age", value: "27 Years" },
     { label: "Nationality", value: "Egyptian" },
     { label: "Freelance", value: "Available", highlight: true },
     { label: "Address", value: "Cairo" },

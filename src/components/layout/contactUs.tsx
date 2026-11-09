@@ -1,207 +1,329 @@
+
+"use client";
+
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import {
-  AlertCircle,
-  CheckCircle,
   Mail,
   MapPin,
   Phone,
   Send,
+  Github,
+  Linkedin,
+  ArrowUpRight,
 } from "lucide-react";
-import Link from "next/link";
 import { Button } from "../ui/button";
-import { useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 
+const CONTACT_EMAIL = "reemsina99@gmail.com";
+const CONTACT_PHONE = "+201129134700";
+
+type FormData = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
+const initialFormData: FormData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
+const contactInfo = [
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Cairo, Egypt",
+    href: undefined,
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: CONTACT_EMAIL,
+    href: `mailto:${CONTACT_EMAIL}`,
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: CONTACT_PHONE,
+    href: `tel:${CONTACT_PHONE}`,
+  },
+];
+
 export function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-    setErrorMessage("");
-
-    try {
-      const mailto = `mailto:${formData.email}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(formData.message)}`;
-      window.location.href = mailto;
-    } catch (error) {
-      setSubmitStatus("error");
-      setErrorMessage("Network error. Please try again.");
-      console.error("Contact form network error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const [isOpeningEmail, setIsOpeningEmail] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const { name, email, subject, message } = formData;
+
+    const emailSubject = encodeURIComponent(subject.trim());
+
+    const emailBody = encodeURIComponent(
+      `Hello Reem,
+
+${message.trim()}
+
+-------------------------
+Name: ${name.trim()}
+Email: ${email.trim()}
+`
+    );
+
+    const mailtoUrl =
+      `mailto:${CONTACT_EMAIL}?subject=${emailSubject}&body=${emailBody}`;
+
+    setIsOpeningEmail(true);
+    window.location.href = mailtoUrl;
+
+    // Reset the button state if the visitor stays on the page.
+    window.setTimeout(() => setIsOpeningEmail(false), 2000);
   };
 
   return (
     <section
       id="contact"
-      className="py-20 bg-background text-foreground relative overflow-hidden"
+      className="relative overflow-hidden bg-background px-6 py-28 text-foreground"
     >
-      <h2 className="text-6xl md:text-8xl font-bold text-foreground/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 uppercase whitespace-nowrap opacity-10">
-        Contact
-      </h2>
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase relative inline-block">
-              Get In <span className="text-mainYellow">Touch</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainYellow"></span>
-            </h2>
-          </div>
+      {/* Background Decoration */}
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-mainYellow/5 blur-3xl" />
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Left Column: Contact Info */}
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-mainYellow/5 blur-3xl" />
+
+      <div className="container relative z-10 mx-auto max-w-6xl">
+
+        {/* Section Heading */}
+        <div className="mb-16 text-center">
+          <p className="mb-4  text-sm font-semibold uppercase tracking-[0.3em] text-mainYellow">
+            Let's connect
+          </p>
+
+          <h2 className="relative inline-block text-4xl font-bold uppercase md:text-5xl">
+            Get In <span className="text-mainYellow">Touch</span>
+
+            <span className="absolute -bottom-3 left-0 h-1 w-full rounded-full bg-mainYellow" />
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-xl text-muted-foreground">
+            Have a project in mind or looking for a developer?
+            I'd love to hear from you. Let's build something great together.
+          </p>
+        </div>
+
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+
+          {/* Contact Information */}
+          <div className="flex flex-col justify-between">
             <div>
-              <h3 className="text-2xl font-bold mb-6 uppercase">
-                Don't be shy !
+              <h3 className="mb-4 text-2xl font-bold">
+                Let's work <span className="text-mainYellow">together!</span>
               </h3>
-              <p className="text-muted-foreground mb-4 font-open-sans">
-                Feel free to get in touch with me. I am always open to
-                discussing new projects, creative ideas or opportunities to be
-                part of your visions.
+
+              <p className="mb-8 leading-7 text-muted-foreground">
+                I'm open to discussing new opportunities, freelance projects,
+                collaborations, and interesting ideas. Feel free to reach out.
               </p>
 
-              <div className="space-y-4 mb-8">
-                <p className="flex items-start open-sans-font custom-span-contact relative">
-                  <MapPin className="h-6 w-6 text-mainYellow mr-4 mt-1" />
-                  <span className="d-block text-muted-foreground">
-                    Address Point
-                  </span>
-                  <span className="text-foreground mx-2">cairo giza egypt</span>
-                </p>
-                <p className="flex items-start open-sans-font custom-span-contact relative">
-                  <Mail className="h-6 w-6 text-mainYellow mr-4 mt-1" />
-                  <span className="d-block text-muted-foreground">Mail me</span>
-                  <Link
-                    href="mailto:reemsina99@gmail.com"
-                    className="text-foreground hover:underline mx-2"
-                  >
-                    reemsina99@gmail.com
-                  </Link>
-                </p>
-                <p className="flex items-start open-sans-font custom-span-contact relative">
-                  <Phone className="h-6 w-6 text-mainYellow mr-4 mt-1" />
-                  <span className="d-block text-muted-foreground">Call me</span>
-                  <Link
-                    href="tel:+201129134700"
-                    className="text-foreground hover:underline mx-2"
-                  >
-                    +201129134700
-                  </Link>
-                </p>
+              {/* Contact Cards */}
+              <div className="space-y-4">
+                {contactInfo.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.label}
+                      className="group flex items-center gap-4 rounded-xl  p-4 transition-all duration-300 hover:-translate-y-1 hover:border-mainYellow/60 hover:shadow-lg"
+                    >
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mainYellow/10 text-mainYellow transition-colors group-hover:bg-mainYellow group-hover:text-mainYellow-foreground">
+                        <Icon size={22} />
+                      </div>
+
+                      <div className="min-w-0 flex-1">
+                        <p className="mb-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                          {item.label}
+                        </p>
+
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            className="break-all text-sm font-medium transition-colors hover:text-mainYellow"
+                          >
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="text-sm font-medium">
+                            {item.value}
+                          </p>
+                        )}
+                      </div>
+
+                      {item.href && (
+                        <ArrowUpRight
+                          size={18}
+                          className="shrink-0 text-muted-foreground transition-colors group-hover:text-mainYellow"
+                        />
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Right Column: Contact Form */}
-            <div>
-              {submitStatus === "success" && (
-                <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-2 text-green-800 dark:bg-green-950 dark:border-green-700 dark:text-green-200">
-                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
-                  <p>Message sent successfully! I'll get back to you soon.</p>
-                </div>
-              )}
+            {/* Social Links */}
+            <div className="mt-10">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-wider">
+                Find me on
+              </p>
 
-              {submitStatus === "error" && (
-                <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-800 dark:bg-red-950 dark:border-red-700 dark:text-red-200">
-                  <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
-                  <p>{errorMessage}</p>
-                </div>
-              )}
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Input
-                      id="name"
-                      placeholder="YOUR NAME"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      disabled={isSubmitting}
-                      className="bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email" className="sr-only">
-                      Your Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="YOUR EMAIL"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      disabled={isSubmitting}
-                      className="bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="subject" className="sr-only">
-                    Your Subject
-                  </Label>
-                  <Input
-                    id="subject"
-                    placeholder="YOUR SUBJECT"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
-                    className="bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="message" className="sr-only">
-                    Your Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    placeholder="YOUR MESSAGE"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={5}
-                    required
-                    disabled={isSubmitting}
-                    className="min-h-[100px] bg-input text-foreground/5 border-border focus:border-mainYellow focus:ring-mainYellow"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="bg-mainYellow text-mainYellow-foreground hover:bg-mainYellow/90 transition-colors duration-300 rounded-full px-8 py-6 text-lg font-semibold shadow-lg"
-                  disabled={isSubmitting}
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/Reem99-sina"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub profile"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-all hover:border-mainYellow hover:bg-mainYellow hover:text-mainYellow-foreground"
                 >
-                  <span className="button-text uppercase mr-3">
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </span>
-                  <Send className="h-5 w-5" />
-                </Button>
-              </form>
+                  <Github size={20} />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/reem-ebrahim-801bb21b0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn profile"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-all hover:border-mainYellow hover:bg-mainYellow hover:text-mainYellow-foreground"
+                >
+                  <Linkedin size={20} />
+                </a>
+              </div>
             </div>
+          </div>
+
+          {/* Contact Form */}
+          <div className="rounded-2xl  p-6 shadow-lg md:p-8">
+            <div className="mb-8">
+              <h3 className="text-xl font-bold">
+                Send me a message
+              </h3>
+
+              <p className="mt-2 text-sm text-muted-foreground">
+                Fill out the form below and let's start a conversation.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+
+              {/* Name & Email */}
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Your Name</Label>
+
+                  <Input
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                    autoComplete="name"
+                    required
+                    maxLength={100}
+                    className="h-12 bg-background focus-visible:ring-mainYellow"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address</Label>
+
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    autoComplete="email"
+                    required
+                    maxLength={254}
+                    className="h-12 bg-background focus-visible:ring-mainYellow"
+                  />
+                </div>
+              </div>
+
+              {/* Subject */}
+              <div className="space-y-2">
+                <Label htmlFor="subject">Subject</Label>
+
+                <Input
+                  id="subject"
+                  name="subject"
+                  placeholder="Project inquiry / Job opportunity"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  maxLength={150}
+                  className="h-12 bg-background focus-visible:ring-mainYellow"
+                />
+              </div>
+
+              {/* Message */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="message">Your Message</Label>
+
+                  <span className="text-xs text-muted-foreground">
+                    {formData.message.length}/1000
+                  </span>
+                </div>
+
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell me about your project or opportunity..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  maxLength={1000}
+                  rows={6}
+                  className="min-h-36 resize-none bg-background focus-visible:ring-mainYellow"
+                />
+              </div>
+
+              {/* Submit */}
+              <Button
+                type="submit"
+                disabled={isOpeningEmail}
+                className="group h-12 w-full rounded-xl bg-mainYellow text-mainYellow-foreground transition-all duration-300 hover:bg-mainYellow/90 hover:shadow-lg"
+              >
+                {isOpeningEmail ? "Opening email app..." : "Send Message"}
+
+                <Send
+                  size={18}
+                  className="ml-2 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
+              </Button>
+
+              <p className="text-center text-xs text-muted-foreground">
+                This form opens your default email application.
+                Your message is not sent automatically.
+              </p>
+            </form>
           </div>
         </div>
       </div>

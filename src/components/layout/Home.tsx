@@ -32,10 +32,13 @@ export function HomeComponent() {
         </h3>
         <h3 className="font-black  uppercase text-3xl">Software Engineering</h3>
         <p className=" text-white">
-          I'm a passionate Software Engineering with 2 years of experience
-          creating responsive and user-friendly web applications. I specialize
-          in Reactjs,Nextjs and love working with modern JavaScript frameworks
-          and libraries.
+          I'm a results-driven Software Engineer with 2+ years of experience
+          designing and developing responsive, scalable, and user-centric web
+          applications. I specialize in building modern web solutions using
+          React.js, Next.js, and TypeScript, with a strong focus on clean code,
+          performance optimization, and delivering seamless user experiences.
+          Passionate about leveraging modern technologies to solve real-world
+          problems and build impactful digital products.
         </p>
         <CTA />
       </div>
