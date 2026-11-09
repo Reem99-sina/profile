@@ -1,106 +1,164 @@
-import React, { ReactNode, useEffect, useState } from "react";
-import { StaticImageData } from "next/image";
-import { Button } from "@/components/ui/button";
-import "./my-project.css";
-import { backendProject } from "@/lib/data/backendProject";
-import { frontendProject } from "@/lib/data/frontendProject";
 
-const Project = ({
-  url,
-  children,
-}: {
-  url: StaticImageData | string;
-  children: ReactNode;
-}) => {
-  return (
-    <article
-      className="protifolio__item"
-      style={{ backgroundImage: `url(${(url as StaticImageData).src || url})` }}
-    >
-      <div className="layout_profile">{children}</div>
-    </article>
-  );
-};
+"use client";
+
+import { useMemo, useState } from "react";
+import Image from "next/image";
+import { Github, ExternalLink } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { frontProjects } from "@/lib/data/frontendProject";
+import { backendProjects } from "@/lib/data/backendProject";
+
+const filters = [
+  "All",
+  "Full-Stack",
+  "Frontend",
+  "Backend",
+  "Mobile",
+] as const;
+
+type Filter = (typeof filters)[number];
 
 const MyProject = () => {
-  const [frontend, setFrontend] = useState([]);
-  const [backend, setBackend] = useState([]);
-  useEffect(() => {
-    const fetchProjects = async () => {
-      const res = await fetch("/api/projects");
-      const data = await res.json();
+  const [activeFilter, setActiveFilter] = useState<Filter>("All");
 
-      setFrontend(data.frontend);
-      setBackend(data.backend);
-    };
+  const projects = useMemo(
+    () => [...frontProjects, ...backendProjects],
+    []
+  );
 
-    fetchProjects();
-  }, []);
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter(
+          (project) => project.category === activeFilter
+        );
 
   return (
     <section
       id="project"
-      className="py-20 px-10 bg-background text-foreground relative overflow-hidden"
+      className="relative overflow-hidden bg-background px-6 py-28 text-foreground"
     >
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase relative inline-block">
-              My recent <span className="text-mainYellow">work</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainYellow"></span>
-            </h2>
-          </div>
-          <div className="relative w-auto">
-            <div className="text-white font-bold text-2xl">Frontend</div>
-            <span className="absolute -bottom-2 left-0 w-16 h-1 bg-mainYellow"></span>
-          </div>
-          <div className="protifolio__container text-white">
-            {frontend?.map((ele: frontendProject, index) => (
-              <Project url={ele.image} key={ele.title + index}>
-                <h3 className="capitalize mb-2">{ele.title}</h3>
-                <div className="protifolio__item-cta">
-                  <Button className="bg-transparent border border-white rounded px-2 py-3">
-                    <a href={ele.githubLink} className="btn" target="blank">
-                      github
+      <div className="container relative z-10 mx-auto max-w-6xl">
+
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h2 className="relative inline-block text-4xl font-bold uppercase md:text-5xl">
+            My Recent <span className="text-mainYellow">Work</span>
+            <span className="absolute -bottom-3 left-0 h-1 w-full bg-mainYellow" />
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-2xl text-muted-foreground">
+            Explore some of my recent projects, showcasing my experience
+            in building modern, responsive, and scalable applications.
+          </p>
+        </div>
+
+        {/* Filters */}
+        <div className="mb-10 flex flex-wrap justify-center gap-3">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                activeFilter === filter
+                  ? "border-mainYellow bg-mainYellow text-mainYellow-foreground"
+                  : "border-border hover:border-mainYellow hover:text-mainYellow"
+              }`}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects */}
+        <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <article
+              key={project.title}
+              className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:-translate-y-2 hover:border-mainYellow hover:shadow-xl"
+            >
+              {/* Image */}
+              <div className="relative aspect-video overflow-hidden bg-muted">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-mainYellow backdrop-blur">
+                  {project.category}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="p-5">
+                <h3 className="mb-3 text-xl font-bold transition-colors group-hover:text-mainYellow">
+                  {project.title}
+                </h3>
+
+                <p className="mb-5 min-h-16 text-sm leading-6 text-muted-foreground">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="mb-6 flex min-h-14 flex-wrap content-start gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md bg-mainYellow/10 px-2.5 py-1 text-xs font-medium text-mainYellow"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-3">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="flex-1"
+                  >
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={16} />
+                      GitHub
                     </a>
                   </Button>
-                  {ele.liveDome && (
-                    <Button className="bg-transparent border border-white rounded px-2 py-3">
-                      <a href={ele.liveDome} className="btn" target="blank">
-                        live demo
+
+                  {project.liveDemo && (
+                    <Button
+                      asChild
+                      className="flex-1 bg-mainYellow text-mainYellow-foreground hover:bg-mainYellow/90"
+                    >
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={16} />
+                        Demo
                       </a>
                     </Button>
                   )}
                 </div>
-              </Project>
-            ))}
-          </div>
-          <div className="relative w-auto">
-            <div className="text-white font-bold text-2xl">Backend</div>
-            <span className="absolute -bottom-2 left-0 w-16 h-1 bg-mainYellow"></span>
-          </div>
-          <div className="protifolio__container text-white">
-            {backend?.map((ele: backendProject, index) => (
-              <Project url={ele.image} key={ele.title + index}>
-                <h3 className="capitalize mb-2">{ele.title}</h3>
-                <div className="protifolio__item-cta">
-                  <Button className="bg-transparent border border-white rounded px-2 py-3">
-                    <a href={ele.githubLink} className="btn" target="blank">
-                      github
-                    </a>
-                  </Button>
-                  {/* {ele?.liveDome && (
-                    <Button className="bg-transparent border border-white rounded px-2 py-3">
-                      <a href={ele?.liveDome} className="btn" target="blank">
-                        live demo
-                      </a>
-                    </Button>
-                  )} */}
-                </div>
-              </Project>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
+
+        {filteredProjects.length === 0 && (
+          <p className="py-12 text-center text-muted-foreground">
+            No projects found in this category.
+          </p>
+        )}
+
       </div>
     </section>
   );

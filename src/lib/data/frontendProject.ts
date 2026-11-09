@@ -1,112 +1,127 @@
+
 import {
-  img4,
-  img9,
-  img10,
-  img11,
-  uber,
-  tiktok,
+  EstateHub,
+  ReviewerCv,
+  Stock,
+  EcommerceVue,
+  SkillSwap,
+  MacBook,
   CodeKids,
   HealthCare,
-  MacBook,
-  EcommerceVue,
-  Stock,
-  SkillSwap,
-  ReviewerCv,
-  EstateHub,
+  img9,
 } from "@/assets";
 
-export type frontendProject = {
-  title: string;
-  image: string;
-  githubLink: string;
-  liveDome: string;
-};
+import type { Project } from "@/lib/types/project";
 
 export const frontProjects = [
   {
     title: "EstateHub",
     image: EstateHub,
+    category: "Full-Stack",
+    description:
+      "A real estate platform with property search, favorites, booking visits, real-time chat, notifications, and role-based dashboards.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Socket.IO",
+    ],
     githubLink: "https://github.com/Reem99-sina/estatehub",
-    liveDome: "https://estatehub-indol.vercel.app/",
+    liveDemo: "https://estatehub-indol.vercel.app/",
   },
   {
-    title: "admin Review CV dashboard",
+    title: "AI CV Reviewer",
     image: ReviewerCv,
-    githubLink: "https://github.com/Reem99-sina/Review_cv_admin",
-    liveDome: "https://review-cv-admin.vercel.app/",
-  },
-  {
-    title: "Review CV  AI project",
-    image: ReviewerCv,
+    category: "Full-Stack",
+    description:
+      "An AI-powered resume reviewing platform that helps users analyze and improve their CVs, with an admin dashboard.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "AI Integration",
+      "Dashboard",
+    ],
     githubLink: "https://github.com/Reem99-sina/Review_cv",
-    liveDome: "https://review-cv-peach.vercel.app/",
+    liveDemo: "https://review-cv-peach.vercel.app/",
   },
   {
-    title: "Skillswap",
-    image: SkillSwap,
-    githubLink: "https://github.com/Reem99-sina/skillswap_mobile.git",
+    title: "CV Reviewer Admin Dashboard",
+    image: ReviewerCv,
+    category: "Frontend",
+    description:
+      "An administrative dashboard for managing and reviewing CV submissions.",
+    technologies: ["React", "TypeScript", "Dashboard"],
+    githubLink: "https://github.com/Reem99-sina/Review_cv_admin",
+    liveDemo: "https://review-cv-admin.vercel.app/",
   },
   {
-    title: "Stock Markets dashboard",
+    title: "Stock Market Dashboard",
     image: Stock,
+    category: "Frontend",
+    description:
+      "A financial dashboard for exploring stock market data and monitoring market information.",
+    technologies: ["React", "JavaScript", "API Integration"],
     githubLink: "https://github.com/Reem99-sina/stocks_market",
-    liveDome: "https://stocks-market-ec9k.vercel.app/",
+    liveDemo: "https://stocks-market-ec9k.vercel.app/",
   },
   {
-    title: "E-commerce website",
+    title: "E-commerce Website",
     image: EcommerceVue,
+    category: "Frontend",
+    description:
+      "An online shopping experience with product browsing and a responsive user interface.",
+    technologies: ["Vue.js", "JavaScript", "CSS"],
     githubLink: "https://github.com/Reem99-sina/ecommerce-vue",
-    liveDome: "https://ecommerce-vue-dusky.vercel.app/",
+    liveDemo: "https://ecommerce-vue-dusky.vercel.app/",
   },
   {
-    title: "mac-book 3d website",
+    title: "SkillSwap",
+    image: SkillSwap,
+    category: "Mobile",
+    description:
+      "A mobile application concept for connecting people who want to exchange skills and knowledge.",
+    technologies: ["React Native"],
+    githubLink: "https://github.com/Reem99-sina/skillswap_mobile",
+  },
+  {
+    title: "Messenger",
+    image: img9,
+    category: "Full-Stack",
+    description:
+      "A messaging application built with Next.js.",
+    technologies: ["Next.js", "React"],
+    githubLink: "https://github.com/Reem99-sina/messager",
+    liveDemo: "https://messag-chat.netlify.app/",
+  },
+  {
+    title: "MacBook 3D Website",
     image: MacBook,
+    category: "Frontend",
+    description:
+      "An interactive product showcase featuring a modern 3D-inspired web experience.",
+    technologies: ["React", "JavaScript", "3D"],
     githubLink: "https://github.com/Reem99-sina/-mac-book",
-    liveDome: "https://mac-book-six.vercel.app/",
+    liveDemo: "https://mac-book-six.vercel.app/",
   },
   {
-    title: "code kids website",
+    title: "Code Kids",
     image: CodeKids,
+    category: "Frontend",
+    description:
+      "An educational website designed to introduce children to coding.",
+    technologies: ["React", "JavaScript"],
     githubLink: "https://github.com/Reem99-sina/code-kids",
-    liveDome: "https://code-kids-five.vercel.app/",
+    liveDemo: "https://code-kids-five.vercel.app/",
   },
   {
-    title: "health care website",
+    title: "Healthcare Platform",
     image: HealthCare,
+    category: "Frontend",
+    description:
+      "A healthcare web interface designed to provide an accessible user experience.",
+    technologies: ["React", "JavaScript"],
     githubLink: "https://github.com/Reem99-sina/healthcare-plateform",
   },
-
-  {
-    title: "messager project with next js",
-    image: img9,
-    githubLink: "https://github.com/Reem99-sina/messager",
-    liveDome: "https://messag-chat.netlify.app/",
-  },
-  {
-    title: "baby shop with next js",
-    image: img10,
-    githubLink: "https://github.com/Reem99-sina/baby-shop",
-    liveDome: "https://baby-shop-ten.vercel.app/",
-  },
-  {
-    title: "coffee shop with react native",
-    image: img11,
-    githubLink: "https://github.com/Reem99-sina/coffeeshop",
-  },
-  {
-    title: "movies search example ",
-    image: img4,
-    githubLink: "https://github.com/Reem99-sina/movies",
-    liveDome: "https://movies-ten-ivory.vercel.app/",
-  },
-  {
-    title: "Uber with react native and node js",
-    image: uber,
-    githubLink: "https://github.com/Reem99-sina/uberFront.git",
-  },
-  {
-    title: "tiktok with react native",
-    image: tiktok,
-    githubLink: "https://github.com/Reem99-sina/tiktok",
-  },
-];
+] satisfies Project[];

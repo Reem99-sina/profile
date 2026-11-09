@@ -41,7 +41,20 @@ export default function Home() {
   return (
     <div className=" flex bg-black  relative flex-col md:flex-row items-center">
       {childrenLink}
-      <div className="bg-[#2b2a2a] flex flex-row md:flex-col  fixed top-[95%] md:top-[50%] -translate-y-1/2 right-0 md:right-10 z-10 items-end w-[100%] sm:w-auto justify-around  md:bg-transparent">
+      <div className="
+  fixed
+  bottom-0 md:bottom-auto
+  top-auto md:top-1/2
+  translate-y-0 md:-translate-y-1/2
+  right-0 md:right-10
+  z-50
+  flex flex-row md:flex-col
+  items-center md:items-end
+  justify-around
+  w-full md:w-auto
+  bg-[#2b2a2a] md:bg-transparent
+  p-3 md:p-0
+">
         {navLinks.map((link) => (
           <div key={link.href} className="group flex items-center">
             <div
