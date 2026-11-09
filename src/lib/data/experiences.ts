@@ -1,7 +1,9 @@
-import { GraduationCap, LucideProps } from "lucide-react";
-import { ForwardRefExoticComponent, RefAttributes } from "react";
 
-export type experience = {
+import { GraduationCap } from "lucide-react";
+import type { ForwardRefExoticComponent, RefAttributes } from "react";
+import type { LucideProps } from "lucide-react";
+
+export type Experience = {
   title: string;
   company: string;
   location: string;
@@ -11,38 +13,54 @@ export type experience = {
   achievements: string[];
 };
 
-export const experiences: experience[] = [
+export const experiences: Experience[] = [
+  {
+    title: "Full-Stack Developer",
+    company: "DTR",
+    location: "Egypt",
+    period: "2026 - Present",
+    type: "Full-time",
+    description:
+      "Working as a Full-Stack Developer on an e-commerce management platform, contributing to frontend development using React.js and TypeScript, and backend development using Java and Spring Boot.",
+    achievements: [
+      "Developing responsive interfaces using React.js, TypeScript, and Ant Design",
+      "Building RESTful APIs using Java and Spring Boot",
+      "Implementing database integration using PostgreSQL, Spring Data JPA, and Hibernate",
+      "Working on authentication, authorization, products, categories, orders, promotions, and inventory management",
+      "Managing database migrations using Flyway",
+    ],
+  },
   {
     title: "Frontend Developer",
     company: "Valoro",
     location: "Cairo, Egypt",
-    period: "2024 - present",
+    period: "2024 - Oct 2025",
     type: "Full-time",
     description:
       "Worked as a Frontend Developer at Valoro, contributing to the development of responsive, user-centric web applications using React.js, Next.js, and Tailwind CSS.",
     achievements: [
-      "Built 3 major product features",
-      "Reduced loading times by 35%",
-      "Improved user engagement by 25%",
+      "Built and maintained responsive user interfaces",
+      "Integrated frontend applications with RESTful APIs",
+      "Focused on performance, usability, and clean code",
     ],
   },
   {
     title: "Frontend Developer",
-    company: "Cyparte",
-    location: "Cairo, 6th of October",
-    period: "2023/Mar - 2023/Oct",
+    company: "Cyparta",
+    location: "6th of October, Egypt",
+    period: "Mar 2023 - Oct 2023",
     type: "Full-time",
     description:
-      "As a Frontend Developer at Cyparte, I was responsible for building modern and responsive user interfaces with a focus on performance, usability, and clean code",
+      "Worked as a Frontend Developer, building modern and responsive user interfaces with a focus on performance, usability, and clean code.",
     achievements: [
-      "Delivered 20+ client projects",
-      "Maintained 99% client satisfaction",
-      "Learned 5+ new technologies",
+      "Developed responsive web interfaces",
+      "Integrated frontend components with backend APIs",
+      "Collaborated on web application development",
     ],
   },
 ];
 
-export type educationType = {
+export type EducationType = {
   title: string;
   institution: string;
   period: string;
@@ -52,21 +70,21 @@ export type educationType = {
   >;
 };
 
-export const education: educationType[] = [
+export const education: EducationType[] = [
   {
     title: "Bachelor Engineering Degree",
-    institution: "Higher institute of Engineering and Technology",
-    period: "2016-2021",
+    institution: "Al Ma'ali Institute of Engineering and Technology",
+    period: "2016 - 2021",
     description:
-      "Earned a Bachelor's degree in Engineering, which laid the foundation for my analytical thinking, problem-solving abilities, and structured approach to technology and systems. During this time, I developed strong fundamentals in logic, mathematics, and engineering principles — skills that later supported my transition into software development and frontend engineering. The discipline and persistence required throughout my engineering education helped shape my work ethic and ability to learn complex technical concepts independently.",
+      "Earned a Bachelor's degree in Engineering, developing strong analytical thinking, problem-solving abilities, and a structured approach to technology and systems.",
     icon: GraduationCap,
   },
   {
-    title: "Diploma Degree",
+    title: "Full-Stack Web Development Diploma",
     institution: "Route",
-    period: "2021/Oct - 2022/Aug",
+    period: "Oct 2021 - Aug 2022",
     description:
-      "Completed an intensive diploma program at Route focused on full-stack web development using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+      "Completed an intensive diploma program focused on full-stack web development using the MERN stack (MongoDB, Express.js, React.js, and Node.js).",
     icon: GraduationCap,
   },
 ];
