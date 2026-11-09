@@ -151,7 +151,7 @@ Email: ${email.trim()}
                       key={item.label}
                       className="group flex items-center gap-4 rounded-xl  p-4 transition-all duration-300 hover:-translate-y-1 hover:border-mainYellow/60 hover:shadow-lg"
                     >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mainYellow/10 text-mainYellow transition-colors group-hover:bg-mainYellow group-hover:text-mainYellow-foreground">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mainYellow/10 text-mainYellow transition-colors group-hover:bg-mainYellow group-hover:text-black">
                         <Icon size={22} />
                       </div>
 
