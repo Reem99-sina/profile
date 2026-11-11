@@ -103,22 +103,22 @@ Email: ${email.trim()}
       className="relative overflow-hidden bg-background px-6 py-28 text-foreground"
     >
       {/* Background Decoration */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-mainYellow/5 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-mainColor/5 blur-3xl" />
 
-      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-mainYellow/5 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-mainColor/5 blur-3xl" />
 
       <div className="container relative z-10 mx-auto max-w-6xl">
 
         {/* Section Heading */}
         <div className="mb-16 text-center">
-          <p className="mb-4  text-sm font-semibold uppercase tracking-[0.3em] text-mainYellow">
+          <p className="mb-4  text-sm font-semibold uppercase tracking-[0.3em] text-mainColor">
             Let's connect
           </p>
 
           <h2 className="relative inline-block text-4xl font-bold uppercase md:text-5xl">
-            Get In <span className="text-mainYellow">Touch</span>
+            Get In <span className="text-mainColor">Touch</span>
 
-            <span className="absolute -bottom-3 left-0 h-1 w-full rounded-full bg-mainYellow" />
+            <span className="absolute -bottom-3 left-0 h-1 w-full rounded-full bg-mainColor" />
           </h2>
 
           <p className="mx-auto mt-8 max-w-xl text-muted-foreground">
@@ -133,7 +133,7 @@ Email: ${email.trim()}
           <div className="flex flex-col justify-between">
             <div>
               <h3 className="mb-4 text-2xl font-bold">
-                Let's work <span className="text-mainYellow">together!</span>
+                Let's work <span className="text-mainColor">together!</span>
               </h3>
 
               <p className="mb-8 leading-7 text-muted-foreground">
@@ -149,9 +149,9 @@ Email: ${email.trim()}
                   return (
                     <div
                       key={item.label}
-                      className="group flex items-center gap-4 rounded-xl  p-4 transition-all duration-300 hover:-translate-y-1 hover:border-mainYellow/60 hover:shadow-lg"
+                      className="group flex items-center gap-4 rounded-xl  p-4 transition-all duration-300 hover:-translate-y-1 hover:border-mainColor/60 hover:shadow-lg"
                     >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mainYellow/10 text-mainYellow transition-colors group-hover:bg-mainYellow group-hover:text-black">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mainColor/10 text-mainColor transition-colors group-hover:bg-mainColor group-hover:text-black">
                         <Icon size={22} />
                       </div>
 
@@ -163,7 +163,7 @@ Email: ${email.trim()}
                         {item.href ? (
                           <a
                             href={item.href}
-                            className="break-all text-sm font-medium transition-colors hover:text-mainYellow"
+                            className="break-all text-sm font-medium transition-colors hover:text-mainColor"
                           >
                             {item.value}
                           </a>
@@ -177,7 +177,7 @@ Email: ${email.trim()}
                       {item.href && (
                         <ArrowUpRight
                           size={18}
-                          className="shrink-0 text-muted-foreground transition-colors group-hover:text-mainYellow"
+                          className="shrink-0 text-muted-foreground transition-colors group-hover:text-mainColor"
                         />
                       )}
                     </div>
@@ -198,7 +198,7 @@ Email: ${email.trim()}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub profile"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-all hover:border-mainYellow hover:bg-mainYellow hover:text-mainYellow-foreground"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-all hover:border-mainColor hover:bg-mainColor hover:text-mainColor-foreground"
                 >
                   <Github size={20} />
                 </a>
@@ -208,7 +208,7 @@ Email: ${email.trim()}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn profile"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-all hover:border-mainYellow hover:bg-mainYellow hover:text-mainYellow-foreground"
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-all hover:border-mainColor hover:bg-mainColor hover:text-mainColor-foreground"
                 >
                   <Linkedin size={20} />
                 </a>
@@ -244,7 +244,7 @@ Email: ${email.trim()}
                     autoComplete="name"
                     required
                     maxLength={100}
-                    className="h-12 bg-background focus-visible:ring-mainYellow"
+                    className="h-12 bg-background focus-visible:ring-mainColor"
                   />
                 </div>
 
@@ -261,7 +261,7 @@ Email: ${email.trim()}
                     autoComplete="email"
                     required
                     maxLength={254}
-                    className="h-12 bg-background focus-visible:ring-mainYellow"
+                    className="h-12 bg-background focus-visible:ring-mainColor"
                   />
                 </div>
               </div>
@@ -278,7 +278,7 @@ Email: ${email.trim()}
                   onChange={handleChange}
                   required
                   maxLength={150}
-                  className="h-12 bg-background focus-visible:ring-mainYellow"
+                  className="h-12 bg-background focus-visible:ring-mainColor"
                 />
               </div>
 
@@ -301,7 +301,7 @@ Email: ${email.trim()}
                   required
                   maxLength={1000}
                   rows={6}
-                  className="min-h-36 resize-none bg-background focus-visible:ring-mainYellow"
+                  className="min-h-36 resize-none bg-background focus-visible:ring-mainColor"
                 />
               </div>
 
@@ -309,7 +309,7 @@ Email: ${email.trim()}
               <Button
                 type="submit"
                 disabled={isOpeningEmail}
-                className="group h-12 w-full rounded-xl bg-mainYellow text-mainYellow-foreground transition-all duration-300 hover:bg-mainYellow/90 hover:shadow-lg"
+                className="group h-12 w-full rounded-xl bg-mainColor text-mainColor-foreground transition-all duration-300 hover:bg-mainColor/90 hover:shadow-lg"
               >
                 {isOpeningEmail ? "Opening email app..." : "Send Message"}
 

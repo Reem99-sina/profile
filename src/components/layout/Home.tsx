@@ -5,7 +5,7 @@ export function HomeComponent() {
   return (
     <>
       <div
-        className="bg-mainYellow fixed -top-[50%]"
+        className="bg-mainColor fixed -top-[50%]"
         style={{
           height: "200%",
           width: "100%",
@@ -27,7 +27,7 @@ export function HomeComponent() {
         </div>
       </div>
       <div className="md:p-5 pb-20 flex flex-col gap-5 flex-1 justify-center me-0 md:me-28 text-center md:text-start">
-        <h3 className="font-black text-mainYellow uppercase text-3xl">
+        <h3 className="font-black text-mainColor uppercase text-3xl">
           I'm Reem Ebrahim.
         </h3>
         <h3 className="font-black  uppercase text-3xl">Software Engineering</h3>
