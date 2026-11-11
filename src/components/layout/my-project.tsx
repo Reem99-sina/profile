@@ -44,8 +44,8 @@ const MyProject = () => {
         {/* Heading */}
         <div className="mb-12 text-center">
           <h2 className="relative inline-block text-4xl font-bold uppercase md:text-5xl">
-            My Recent <span className="text-mainYellow">Work</span>
-            <span className="absolute -bottom-3 left-0 h-1 w-full bg-mainYellow" />
+            My Recent <span className="text-mainColor">Work</span>
+            <span className="absolute -bottom-3 left-0 h-1 w-full bg-mainColor" />
           </h2>
 
           <p className="mx-auto mt-8 max-w-2xl text-muted-foreground">
@@ -62,8 +62,8 @@ const MyProject = () => {
               onClick={() => setActiveFilter(filter)}
               className={`rounded-full border px-5 py-2 text-sm font-medium transition-all duration-300 ${
                 activeFilter === filter
-                  ? "border-mainYellow bg-mainYellow text-mainYellow-foreground"
-                  : "border-border hover:border-mainYellow hover:text-mainYellow"
+                  ? "border-mainColor bg-mainColor text-mainColor-foreground"
+                  : "border-border hover:border-mainColor hover:text-mainColor"
               }`}
             >
               {filter}
@@ -76,7 +76,7 @@ const MyProject = () => {
           {filteredProjects.map((project) => (
             <article
               key={project.title}
-              className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:-translate-y-2 hover:border-mainYellow hover:shadow-xl"
+              className="group overflow-hidden rounded-2xl  transition-all duration-300 hover:-translate-y-2 hover:border-mainColor hover:shadow-xl"
             >
               {/* Image */}
               <div className="relative aspect-video overflow-hidden bg-muted">
@@ -88,14 +88,14 @@ const MyProject = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
-                <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-mainYellow backdrop-blur">
+                <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-mainColor backdrop-blur">
                   {project.category}
                 </span>
               </div>
 
               {/* Content */}
               <div className="p-5">
-                <h3 className="mb-3 text-xl font-bold transition-colors group-hover:text-mainYellow">
+                <h3 className="mb-3 text-xl font-bold transition-colors group-hover:text-mainColor">
                   {project.title}
                 </h3>
 
@@ -108,7 +108,7 @@ const MyProject = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-mainYellow/10 px-2.5 py-1 text-xs font-medium text-mainYellow"
+                      className="rounded-md bg-mainColor/10 px-2.5 py-1 text-xs font-medium text-mainColor"
                     >
                       {tech}
                     </span>
@@ -135,7 +135,7 @@ const MyProject = () => {
                   {project.liveDemo && (
                     <Button
                       asChild
-                      className="flex-1 bg-mainYellow text-mainYellow-foreground hover:bg-mainYellow/90"
+                      className="flex-1 bg-mainColor text-mainColor-foreground hover:bg-mainColor/90"
                     >
                       <a
                         href={project.liveDemo}

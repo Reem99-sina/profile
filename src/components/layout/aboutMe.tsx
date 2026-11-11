@@ -28,8 +28,8 @@ export function AboutMe() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground uppercase relative inline-block">
-              About <span className="text-mainYellow">Me</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainYellow"></span>
+              About <span className="text-mainColor">Me</span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainColor"></span>
             </h2>
           </div>
 
@@ -64,10 +64,10 @@ export function AboutMe() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className=" text-center p-6 shadow-lg border border-border transition-all duration-300 hover:scale-[1.02] hover:border-mainYellow"
+                  className=" text-center p-6 shadow-lg border border-border transition-all duration-300 hover:scale-[1.02] hover:border-mainColor"
                 >
                   <div className="flex flex-col items-center justify-center h-full">
-                    <div className="text-5xl font-bold text-mainYellow mb-2">
+                    <div className="text-5xl font-bold text-mainColor mb-2">
                       {stat.value}
                     </div>
                     <p className="text-sm text-muted-foreground uppercase tracking-wider">

@@ -74,8 +74,8 @@ export function Skills() {
           {/* Section Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold uppercase relative inline-block">
-              My <span className="text-mainYellow">Skills</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainYellow" />
+              My <span className="text-mainColor">Skills</span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainColor" />
             </h2>
 
             <p className="text-lg text-muted-foreground mt-6">
@@ -89,10 +89,10 @@ export function Skills() {
               <div
                 key={category.title}
                 className="rounded-xl p-4 shadow-md
-                hover:shadow-lg hover:border-mainYellow
+                hover:shadow-lg hover:border-mainColor
                 transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-mainYellow mb-6">
+                <h3 className="text-lg font-semibold text-mainColor mb-6">
                   {category.title}
                 </h3>
 
@@ -123,7 +123,7 @@ export function Skills() {
 
           {/* Technologies */}
           <div className="rounded-xl border border-border p-6 shadow-md">
-            <h3 className="text-xl font-semibold text-mainYellow mb-6">
+            <h3 className="text-xl font-semibold text-mainColor mb-6">
               Technologies I Work With
             </h3>
 
@@ -131,8 +131,8 @@ export function Skills() {
               {technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-mainYellow text-mainYellow-foreground
-                  hover:bg-mainYellow/90 transition-colors
+                  className="bg-mainColor text-mainColor-foreground
+                  hover:bg-mainColor/90 transition-colors
                   duration-300 px-4 py-2 rounded-lg text-sm font-medium"
                 >
                   {tech}

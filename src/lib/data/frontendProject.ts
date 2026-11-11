@@ -92,8 +92,7 @@ export const frontProjects = [
     description:
       "A messaging application built with Next.js.",
     technologies: ["Next.js", "React"],
-    githubLink: "https://github.com/Reem99-sina/messager",
-    liveDemo: "https://messag-chat.netlify.app/",
+    githubLink: "https://github.com/Reem99-sina/messager"
   },
   {
     title: "MacBook 3D Website",

@@ -18,8 +18,8 @@ export function ExperienceSection() {
           {/* Experience Heading */}
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold uppercase relative inline-block">
-              My <span className="text-mainYellow">Experience</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainYellow" />
+              My <span className="text-mainColor">Experience</span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainColor" />
             </h2>
 
             <p className="text-lg text-muted-foreground mt-6">
@@ -36,7 +36,7 @@ export function ExperienceSection() {
               >
                 <div className="absolute left-7 top-14 bottom-0 w-[2px] bg-border" />
 
-                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-mainYellow text-black shadow-lg z-10">
+                <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-mainColor text-black shadow-lg z-10">
                   <BriefcaseBusiness className="h-6 w-6" />
                 </div>
 
@@ -44,7 +44,7 @@ export function ExperienceSection() {
                   <div className="p-6">
                     <h3 className="text-xl font-bold mb-2 uppercase">
                       {exp.title}
-                      <span className="text-mainYellow">
+                      <span className="text-mainColor">
                         {" "}— {exp.company}
                       </span>
                     </h3>
@@ -73,7 +73,7 @@ export function ExperienceSection() {
                           key={i}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
                         >
-                          <span className="text-mainYellow mt-1">✦</span>
+                          <span className="text-mainColor mt-1">✦</span>
                           {achievement}
                         </li>
                       ))}
@@ -87,8 +87,8 @@ export function ExperienceSection() {
           {/* Education Heading */}
           <div className="text-center my-16">
             <h2 className="text-4xl md:text-5xl font-bold uppercase relative inline-block">
-              My <span className="text-mainYellow">Education</span>
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainYellow" />
+              My <span className="text-mainColor">Education</span>
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-mainColor" />
             </h2>
 
             <p className="text-lg text-muted-foreground mt-6">
@@ -108,7 +108,7 @@ export function ExperienceSection() {
                 >
                   <div className="absolute left-7 top-14 bottom-0 w-[2px] bg-border" />
 
-                  <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-mainYellow text-black shadow-lg z-10">
+                  <div className="absolute left-0 top-0 flex items-center justify-center w-14 h-14 rounded-full bg-mainColor text-black shadow-lg z-10">
                     <Icon className="h-6 w-6" />
                   </div>
 
@@ -116,7 +116,7 @@ export function ExperienceSection() {
                     <div className="p-6">
                       <h3 className="text-xl font-bold mb-2 uppercase">
                         {item.title}
-                        <span className="text-mainYellow">
+                        <span className="text-mainColor">
                           {" "}— {item.institution}
                         </span>
                       </h3>

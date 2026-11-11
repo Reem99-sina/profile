@@ -1,6 +1,5 @@
 export const colors = {
-    mainColor: "#7ee1e6",
-    secondaryColor:"#b676d7",
-    darkMainColor:"#1a1147",
-    mainYellow:"#ffb400"
-  };
+  mainColor: "#53685e",
+  secondaryColor: "#B7A9D6",
+  darkMainColor: "#111318"
+};
