@@ -24,10 +24,12 @@ import SkillSwap from "../assets/skillswap.jpeg";
 import ReviewerCv from "../assets/people-are-reviewing.jpg";
 import EstateHub from "../assets/estateHub.png";
 
+import FlowDesk from "../assets/FlowDesk.png";
 
 
 
 export {
+  FlowDesk,
   EstateHub,
   ReviewerCv,
   SkillSwap,
